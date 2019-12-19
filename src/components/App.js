@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import Board from './Board';
+import Result from './Result';
+import styled from 'styled-components';
 import './App.css';
 
-function App() {
+const App = ({className}) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={className}>
+      <Result />
+      <Board />
     </div>
   );
 }
 
-export default App;
+export default styled(App)`
+  font-family: Courier New, Courier, monospace;
+  margin: 0 auto;
+  width: 200px;
+`;

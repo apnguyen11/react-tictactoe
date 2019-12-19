@@ -20,7 +20,7 @@ const countInRightSlant = (symbol, ...rows) => {
 const hasWonInRightSlant = (symbol, ...rows) => countInRightSlant(symbol, ...rows) === 3;
 export const hasThreatInRightSlant = (symbol, ...rows) => countInRightSlant(symbol, ...rows) === 2;
 
-export const resultForSymbol = (symbol, board) => {
+const resultForSymbol = (symbol, board) => {
   const rows = Object.keys(board).map(row => board[row]);
   return [
     {line: 'row0', won: hasWonInRow(symbol, board[0])},
@@ -36,3 +36,5 @@ export const resultForSymbol = (symbol, board) => {
     return nextCheck.won ? nextCheck : answer;
   }, {won: false});
 };
+
+export default resultForSymbol 
